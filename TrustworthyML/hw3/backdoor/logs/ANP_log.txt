@@ -1,0 +1,48 @@
+# The process when set threshold to zero and check alpha
+
+{"alpha": 0.45, "ASR": 0.1238, "ACC": 0.9267, "score": -0.06710000000000006}
+{"alpha": 0.1, "ASR": 0.1279, "ACC": 0.9234, "score": -0.07450000000000005}
+{"alpha": 0.35, "ASR": 0.1278, "ACC": 0.921, "score": -0.0768}
+{"alpha": 0.3, "ASR": 0.1347, "ACC": 0.9228, "score": -0.08190000000000007}
+{"alpha": 0.5, "ASR": 0.1836, "ACC": 0.9234, "score": -0.13020000000000004}
+{"alpha": 0.25, "ASR": 0.1951, "ACC": 0.9261, "score": -0.139}
+{"alpha": 0.4, "ASR": 0.1904, "ACC": 0.9209, "score": -0.1395}
+{"alpha": 0.55, "ASR": 0.1919, "ACC": 0.9208, "score": -0.14110000000000006}
+{"alpha": 0.05, "ASR": 0.2199, "ACC": 0.9228, "score": -0.16710000000000008}
+{"alpha": 0.15, "ASR": 0.2287, "ACC": 0.9238, "score": -0.17490000000000006}
+{"alpha": 0.6, "ASR": 0.2289, "ACC": 0.9215, "score": -0.17740000000000006}
+{"alpha": 0.2, "ASR": 0.2694, "ACC": 0.9269, "score": -0.21250000000000008}
+{"alpha": 0.7, "ASR": 0.573, "ACC": 0.9269, "score": -0.5161}
+{"alpha": 0.65, "ASR": 0.6114, "ACC": 0.9207, "score": -0.5607000000000001}
+{"alpha": 0.0, "ASR": 0.6779, "ACC": 0.9243, "score": -0.6235999999999999}
+{"alpha": 0.8, "ASR": 0.7242, "ACC": 0.9256, "score": -0.6686}
+{"alpha": 0.9, "ASR": 0.7601, "ACC": 0.9275, "score": -0.7026}
+{"alpha": 0.95, "ASR": 0.7602, "ACC": 0.9274, "score": -0.7028}
+{"alpha": 0.85, "ASR": 0.7817, "ACC": 0.925, "score": -0.7266999999999999}
+{"alpha": 0.75, "ASR": 0.8129, "ACC": 0.9178, "score": -0.7651}
+
+# The second step search the best threshold for specific alpha which PoisonACC is less than 0.25
+... 
+After some test process, I find the a configuration (alpha=0.2) which and get full score(PoisonACC<0.05, CleanACC>0.92)
+
+# Set alpha = 0.2, change threshold
+{"No.": 27.0, "Layer Name": "layer4.0.bn2", "Neuron Idx": 226, "Mask": 0.0, "PoisonLoss": 0.0189, "PoisonACC": 0.9992, "CleanLoss": 0.2561, "CleanACC": 0.9389}
+{"No.": 60.0, "Layer Name": "layer4.0.bn2", "Neuron Idx": 329, "Mask": 0.05, "PoisonLoss": 0.0495, "PoisonACC": 0.9952, "CleanLoss": 0.2589, "CleanACC": 0.9349}
+{"No.": 91.0, "Layer Name": "layer3.0.bn1", "Neuron Idx": 45, "Mask": 0.1, "PoisonLoss": 0.2356, "PoisonACC": 0.9226, "CleanLoss": 0.2581, "CleanACC": 0.9316}
+{"No.": 125.0, "Layer Name": "layer4.1.bn1", "Neuron Idx": 51, "Mask": 0.15, "PoisonLoss": 0.8319, "PoisonACC": 0.5438, "CleanLoss": 0.2608, "CleanACC": 0.9282}
+{"No.": 171.0, "Layer Name": "layer2.1.bn1", "Neuron Idx": 71, "Mask": 0.2, "PoisonLoss": 1.4785, "PoisonACC": 0.2694, "CleanLoss": 0.2607, "CleanACC": 0.9269}
+{"No.": 196.0, "Layer Name": "layer3.1.bn1", "Neuron Idx": 153, "Mask": 0.25, "PoisonLoss": 3.6408, "PoisonACC": 0.033, "CleanLoss": 0.2727, "CleanACC": 0.9213}
+{"No.": 238.0, "Layer Name": "layer4.1.bn2", "Neuron Idx": 302, "Mask": 0.3, "PoisonLoss": 3.7369, "PoisonACC": 0.0232, "CleanLoss": 0.2827, "CleanACC": 0.9162}
+{"No.": 298.0, "Layer Name": "layer4.1.bn2", "Neuron Idx": 397, "Mask": 0.35, "PoisonLoss": 3.7593, "PoisonACC": 0.0226, "CleanLoss": 0.3164, "CleanACC": 0.9081}
+{"No.": 356.0, "Layer Name": "layer4.0.bn2", "Neuron Idx": 81, "Mask": 0.4, "PoisonLoss": 3.8726, "PoisonACC": 0.0133, "CleanLoss": 0.3554, "CleanACC": 0.8892}
+{"No.": 423.0, "Layer Name": "layer2.0.shortcut.1", "Neuron Idx": 111, "Mask": 0.45, "PoisonLoss": 3.6007, "PoisonACC": 0.0204, "CleanLoss": 0.4208, "CleanACC": 0.8734}
+{"No.": 507.0, "Layer Name": "layer4.0.bn2", "Neuron Idx": 493, "Mask": 0.5, "PoisonLoss": 3.8734, "PoisonACC": 0.0107, "CleanLoss": 0.4825, "CleanACC": 0.8481}
+{"No.": 593.0, "Layer Name": "layer4.1.bn2", "Neuron Idx": 145, "Mask": 0.55, "PoisonLoss": 3.6387, "PoisonACC": 0.0143, "CleanLoss": 0.557, "CleanACC": 0.8252}
+{"No.": 682.0, "Layer Name": "layer3.1.bn2", "Neuron Idx": 53, "Mask": 0.6, "PoisonLoss": 3.3446, "PoisonACC": 0.0149, "CleanLoss": 0.625, "CleanACC": 0.8035}
+{"No.": 803.0, "Layer Name": "layer4.1.bn2", "Neuron Idx": 340, "Mask": 0.65, "PoisonLoss": 3.0961, "PoisonACC": 0.0157, "CleanLoss": 0.7911, "CleanACC": 0.753}
+{"No.": 949.0, "Layer Name": "layer4.1.bn2", "Neuron Idx": 182, "Mask": 0.7, "PoisonLoss": 2.6348, "PoisonACC": 0.0288, "CleanLoss": 1.1543, "CleanACC": 0.624}
+{"No.": 1101.0, "Layer Name": "layer4.1.bn2", "Neuron Idx": 373, "Mask": 0.75, "PoisonLoss": 2.6978, "PoisonACC": 0.0257, "CleanLoss": 1.6113, "CleanACC": 0.4078}
+{"No.": 1251.0, "Layer Name": "bn1", "Neuron Idx": 25, "Mask": 0.8, "PoisonLoss": 2.749, "PoisonACC": 0.0209, "CleanLoss": 2.1076, "CleanACC": 0.2013}
+{"No.": 1480.0, "Layer Name": "layer3.0.shortcut.1", "Neuron Idx": 61, "Mask": 0.85, "PoisonLoss": 2.1029, "PoisonACC": 0.1792, "CleanLoss": 2.1654, "CleanACC": 0.2086}
+{"No.": 1740.0, "Layer Name": "layer3.1.bn2", "Neuron Idx": 134, "Mask": 0.9, "PoisonLoss": 1.8444, "PoisonACC": 0.3178, "CleanLoss": 2.3321, "CleanACC": 0.1723}
+{"No.": 2062.0, "Layer Name": "layer4.0.shortcut.1", "Neuron Idx": 268, "Mask": 0.95, "PoisonLoss": 2.0379, "PoisonACC": 0.0293, "CleanLoss": 2.4256, "CleanACC": 0.1147}
