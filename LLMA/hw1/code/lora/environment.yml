@@ -1,0 +1,20 @@
+name: peft-lora-env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - cudatoolkit=11.8        # 如果你有 NVIDIA GPU 并安装了对应驱动
+  - pytorch>=2.0            # 会自动匹配 cudatoolkit
+  - torchvision             # 有些 transformer 需要
+  - pip:
+      - transformers>=4.33.0
+      - datasets>=2.12.0
+      - peft                # LoRA & PEFT 支持
+      - accelerate>=0.20.3  # 可选，用于分布式/混合精度
+      - tensorboard         # 用于 logging_dir=tensorboard
+      - sentencepiece       # 如果用到 T5/Alpaca 类模型
+      - safetensors         # 加速模型加载
+      - ipython             # 支持 IPython.display
+      - tqdm                # 进度条
