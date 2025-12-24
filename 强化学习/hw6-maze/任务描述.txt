@@ -1,0 +1,40 @@
+Maze
+  在Maze环境上实现并对比Dyna-Q算法和Dyna-Q+算法的表现，撰写实验报告并提交代码。
+  使用Sutton RL book P166 Example 8.2 Blocking Maze 和 P167 Example 8.3 Shortcut Maze两个例子来对比上述两个算法。
+提示：
+  1. 样例中已经实现Q学习算法可供参考。
+  2. 对于Dyna-Q / Q+算法的planning步骤，可以直接使用Maze环境，无需自己学习一个环境模型。
+
+
+
+deterministic maze environment
+Use learned Model(S,A) is equivalent to use the real environment for planning steps
+
+
+
+Hyperparameters:
+FIG_8_4_INIT_POS = (5, 3)
+FIG_8_4_GOAL_POS_L = [(0, 8)]
+FIG_8_4_GRID_SHAPE = (6, 9)
+FIG_8_4_WALLS = [(3, y) for y in range(FIG_8_4_GRID_SHAPE[1])]
+FIG_8_4_CHG_T = 1000
+FIG_8_4_FINAL_T = 3000
+FIG_8_4_PLAN_STEPS = 50
+FIG_8_4_N_RUNS = 5
+FIG_8_4_ALP = 0.5
+FIG_8_4_EPS = 0.1
+FIG_8_4_K = 0.001
+
+
+
+BLOCK 超参数
+
+const int PLANNING_STEPS = 20;
+const double ALPHA = 0.8;
+const int N_RUNS = 10;
+const double EPSILON = 0.2;
+const double GAMMA = 0.95;
+const double KAPPA = 0.0001; // for Dyna-Q+
+std::mt19937 rng(0); 
+
+初始化 q 为 0.01
